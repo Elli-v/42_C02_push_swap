@@ -3,29 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/09 21:05:37 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/09 21:56:38 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int three_to_five_a(t_stack *a, t_stack *b, int total)
+void	three_to_five_a(t_stack *a, t_stack *b, int total)
 {
-	if (total <= 3)
+	if (total == 2)
 	{
+		if (a->head->index > a->tail->index)
+			swap_stack(a, A);
+	}
+	else if (total <= 3)
 		three_index_a(a, total);
-		return (0);
-	}
+	else if (total == 4)
+		four_index(a, b, total);
 	else if (total == 5)
-	{
 		five_index_a(a, b, total);
-		return (0);
-	}
-	else
-		return (1);
 }
 
 void three_index_a(t_stack *a, int total)
@@ -65,6 +64,23 @@ void three_index_a(t_stack *a, int total)
 	}
 }
 
+void four_index(t_stack *a, t_stack *b, int real_total)
+{
+	int	min;
+	int	total;
+
+	total = real_total;
+	min = min_index(a->head, total);
+	while (total--)
+	{
+		if (a->head->index == min)
+			push_stack(a, b, B);
+		rotate_stack(a, A);
+	}
+	three_index_a(a, a->total);
+	push_stack(b, a, A);
+}
+
 void five_index_a(t_stack *a, t_stack *b, int real_total)
 {
 	int total;
@@ -99,8 +115,13 @@ void atob(int total, t_stack *a, t_stack *b, int cnt)
 	// printf("\natob in !\n");
 	temp = total;
 	init_sort(&sort);
-	if (!three_to_five_a(a, b, total))
-		return;
+	if (total <= 5)
+	{
+		three_to_five_a(a, b, total);
+		return ;
+	}
+	// if (!three_to_five_a(a, b, total))
+	// 	return;
 	select_pivot(&sort, a);
 	// printf("s.p = %d >>><<< b.p = %d\n", sort.s_pivot, sort.b_pivot);
 	while (temp--)
@@ -108,7 +129,8 @@ void atob(int total, t_stack *a, t_stack *b, int cnt)
 		sort_push_a(a, b, &sort);
 		// printf("짜증나\n");
 		// ra한 만큼 rrr을 해서 a 스택은 그대로 두고 s.pivot 보다 작은 수를 b스택 위로 보내기 위함
-		if (sort.cnt_ra > sort.cnt_rb)
+	}
+	if (sort.cnt_ra > sort.cnt_rb)
 		{
 			temp = sort.cnt_rb;
 			temp2 = sort.cnt_ra - sort.cnt_rb;
@@ -147,8 +169,9 @@ void atob(int total, t_stack *a, t_stack *b, int cnt)
 		// printf("rb = %d\n", sort.cnt_rb);
 		// printf("pb = %d\n", sort.cnt_pb);
 		just_check(a, b);
+		printf("pb =  %d\n", sort.cnt_pb);
 		atob(sort.cnt_ra, a, b, cnt);
 		btoa(sort.cnt_rb, a, b, &cnt);
-		// just_check(a, b);
-		btoa((sort.cnt_pb - sort.cnt_rb), a, b, &cnt);
-	}
+		// // just_check(a, b);
+		// btoa((sort.cnt_pb - sort.cnt_rb), a, b, &cnt);
+}

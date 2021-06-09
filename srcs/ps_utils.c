@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 20:41:10 by soooh             #+#    #+#             */
-/*   Updated: 2021/05/31 02:08:20 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/09 21:20:21 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void			ps_putendl_fd(char *s, int fd)
+void			 ps_putendl_fd(char *s, int fd)
 {
 	int			i;
 

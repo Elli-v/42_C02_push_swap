@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/09 01:29:02 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/09 21:49:54 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_sort
 	int cnt_rb;
 	int cnt_pa;
 	int cnt_pb;
+	int	iamBstack;
 } t_sort;
 
 void just_check(t_stack *a, t_stack *b);
@@ -106,9 +107,9 @@ void find_index(t_node *node, t_stack *stack);
 /*
 ** ps_atob.c
 */
-int three_to_five_a(t_stack *a, t_stack *b, int total);
+void	three_to_five_a(t_stack *a, t_stack *b, int total);
 void three_index_a(t_stack *a, int total);
-void four_index_a(t_stack *a, t_stack *b, int real_total);
+void four_index(t_stack *a, t_stack *b, int real_total);
 void five_index_a(t_stack *a, t_stack *b, int real_total);
 void atob(int total, t_stack *a, t_stack *b, int cnt);
 
