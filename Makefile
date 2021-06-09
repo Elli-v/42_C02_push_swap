@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: soooh <soooh@student.42.fr>                +#+  +:+       +#+         #
+#    By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 15:24:05 by soooh             #+#    #+#              #
-#    Updated: 2021/06/09 21:30:21 by soooh            ###   ########.fr        #
+#    Updated: 2021/06/10 03:05:05 by soooh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS			= ./srcs/push_swap.c\
 					./srcs/ps_push_pop.c\
 					./srcs/ps_double.c\
 					./srcs/ps_sort.c\
+					./srcs/ps_under_five.c\
 					./srcs/ps_atob.c\
 					./srcs/ps_btoa.c\
 					./srcs/ps_prev_stack.c

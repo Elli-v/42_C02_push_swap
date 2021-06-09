@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/09 21:49:54 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/10 03:05:59 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,12 @@ typedef struct s_sort
 	int cnt_rb;
 	int cnt_pa;
 	int cnt_pb;
-	int	iamBstack;
+	int iamBstack;
 } t_sort;
 
 void just_check(t_stack *a, t_stack *b);
+
+void two_index_a(t_stack *a);
 
 /*
 ** ps_init.c
@@ -107,7 +109,7 @@ void find_index(t_node *node, t_stack *stack);
 /*
 ** ps_atob.c
 */
-void	three_to_five_a(t_stack *a, t_stack *b, int total);
+void three_to_five_a(t_stack *a, t_stack *b, int total);
 void three_index_a(t_stack *a, int total);
 void four_index(t_stack *a, t_stack *b, int real_total);
 void five_index_a(t_stack *a, t_stack *b, int real_total);
