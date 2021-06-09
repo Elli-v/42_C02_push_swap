@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:37:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/09 03:16:37 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/09 21:01:44 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void three_index_b(t_stack *a, t_stack *b, int total)
 
 	min = min_index(b->head, total);
 	max = max_index(b->head, total);
-	printf("min = %d >><< max = %d\n total = %d\n", min, max, total);
-	printf("now index = %d\n", b->head->index);
+	// printf("min = %d >><< max = %d\n total = %d\n", min, max, total);
+	// printf("now index = %d\n", b->head->index);
 	if (b->total == 3)
 	{
 		if ((b->head->index == max && b->tail->index != min) ||
@@ -83,7 +83,7 @@ void five_index_b(t_stack *a, t_stack *b, int real_total)
 	int min;
 	int max;
 
-	printf("******total = %d\n", real_total);
+	// printf("******total = %d\n", real_total);
 	min = min_index(b->head, real_total);
 	max = max_index(b->head, real_total);
 	pivot = (min + max) / 2;
@@ -108,34 +108,18 @@ void btoa(int total, t_stack *a, t_stack *b, int *cnt)
 	int temp;
 
 	(*cnt)++;
-	printf("\n btoa in !\n");
+	// printf("\n btoa in !\n");
 	temp = total;
 	init_sort(&sort);
-	printf("total = %d\n", total);
+	// printf("total //= %d\n", total);
 	if (!three_to_five_b(a, b, total))
 		return;
 	select_pivot(&sort, b);
-	printf("s.p = %d >>><<< b.p = %d\n", sort.s_pivot, sort.b_pivot);
-	printf("B // temp = %d\n", temp);
+	// printf("s.p = %d >>><<< b.p = %d\n", sort.s_pivot, sort.b_pivot);
+	// printf("B // temp = %d\n", temp);
 	while (temp--)
-	{
-		if (b->head->index < sort.s_pivot)
-		{
-			rotate_stack(b, B);
-			sort.cnt_rb++;
-		}
-		else
-		{
-			push_stack(b, a, A);
-			sort.cnt_pa++;
-			if (b->head->index >= sort.b_pivot)
-			{
-				rotate_stack(a, A);
-				sort.cnt_ra++;
-			}
-		}
-	}
-	printf("pa = %d ra = %d\n", sort.cnt_pa, sort.cnt_ra);
+		sort_push_b(a, b, &sort);
+	// printf("pa = %d ra = %d\n", sort.cnt_pa, sort.cnt_ra);
 	atob((sort.cnt_pa - sort.cnt_ra), a, b, *cnt);
 	if (sort.cnt_ra > sort.cnt_rb)
 	{

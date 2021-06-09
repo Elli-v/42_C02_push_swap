@@ -6,15 +6,15 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 04:24:17 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/07 17:01:02 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/09 21:00:36 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int					min_index(t_node *node, int total)
+int min_index(t_node *node, int total)
 {
-	int				min;
+	int min;
 
 	min = node->index;
 	while (total--)
@@ -24,16 +24,16 @@ int					min_index(t_node *node, int total)
 		if (node->next)
 			node = node->next;
 		else
-			break ;
+			break;
 	}
 	while (node->prev)
 		node = node->prev;
 	return (min);
 }
 
-int					max_index(t_node *node, int total)
+int max_index(t_node *node, int total)
 {
-	int				max;
+	int max;
 
 	max = node->index;
 	while (total--)
@@ -43,19 +43,19 @@ int					max_index(t_node *node, int total)
 		if (node->next)
 			node = node->next;
 		else
-			break ;
+			break;
 	}
 	while (node->prev)
 		node = node->prev;
 	return (max);
 }
 
-void				select_pivot(t_sort *sort, t_stack *stack)
+void select_pivot(t_sort *sort, t_stack *stack)
 {
-	int				min;
-	int				med;
-	int				max;
-	
+	int min;
+	int med;
+	int max;
+
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
 	med = (min + max) / 2;
@@ -63,10 +63,10 @@ void				select_pivot(t_sort *sort, t_stack *stack)
 	sort->s_pivot = (min + med) / 2;
 }
 
-void				sort_reverse(t_stack *a, t_stack *b, t_sort *sort, int flag)
+void sort_reverse(t_stack *a, t_stack *b, t_sort *sort, int flag)
 {
-	int				rrr;
-	int				rem;
+	int rrr;
+	int rem;
 
 	if (flag == A)
 	{
@@ -88,9 +88,9 @@ void				sort_reverse(t_stack *a, t_stack *b, t_sort *sort, int flag)
 	}
 }
 
-void				sort_push_b(t_stack *a, t_stack *b, t_sort *sort)
+void sort_push_b(t_stack *a, t_stack *b, t_sort *sort)
 {
-	if (a->head->index <= sort->s_pivot)
+	if (b->head->index < sort->s_pivot)
 	{
 		rotate_stack(b, B);
 		sort->cnt_rb++;
@@ -99,17 +99,22 @@ void				sort_push_b(t_stack *a, t_stack *b, t_sort *sort)
 	{
 		push_stack(b, a, A);
 		sort->cnt_pa++;
-		if (a->head->index <= sort->b_pivot)
+		if (b->head->index >= sort->b_pivot)
 		{
-			rotate_stack(a, A);
-			sort->cnt_ra++;
+			if (b->head->index < sort->s_pivot)
+				rotate_rotate(a, b, B);
+			else
+			{
+				rotate_stack(a, A);
+				sort->cnt_ra++;
+			}
 		}
 	}
 }
 
-void				sort_push_a(t_stack *a, t_stack *b, t_sort *sort)
+void sort_push_a(t_stack *a, t_stack *b, t_sort *sort)
 {
-	if (a->head->index >= sort->b_pivot)
+	if (a->head->index > sort->b_pivot)
 	{
 		rotate_stack(a, A);
 		sort->cnt_ra++;
@@ -118,10 +123,15 @@ void				sort_push_a(t_stack *a, t_stack *b, t_sort *sort)
 	{
 		push_stack(a, b, B);
 		sort->cnt_pb++;
-		if (b->head->index > sort->s_pivot)
+		if (b->head->index <= sort->s_pivot)
 		{
-			rotate_stack(b, B);
-			sort->cnt_rb++;
+			if (b->head->index <= sort->s_pivot)
+				rotate_rotate(a, b, A);
+			else
+			{
+				rotate_stack(b, B);
+				sort->cnt_rb++;
+			}
 		}
 	}
 }
