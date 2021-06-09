@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 03:05:59 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/10 05:45:36 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 #define A 1
 #define B 2
 #define ALL 3
+
+#define MIN 10
+#define MID 11
+#define MAX 12
 
 #define BASIC 100
 #define INT_RANGE 101

@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 05:21:51 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/10 06:01:25 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
 	just_check(a, b);
 	// two_index_a(a);
 	// three_index_a(a, 3);
-	// four_index(a, b, a->total);
-	five_index_a(a, b, a->total);
+	// four_index(a, b, 4);
+	five_index_a(a, b, 5);
 	// atob(a->total, a, b, cnt);
 	just_check(a, b);
 }
