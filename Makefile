@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+         #
+#    By: soooh <soooh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 15:24:05 by soooh             #+#    #+#              #
-#    Updated: 2021/06/10 03:05:05 by soooh            ###   ########.fr        #
+#    Updated: 2021/06/10 21:28:08 by soooh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS			= ./srcs/push_swap.c\
 					./srcs/ps_prev_stack.c
 
 CFLAGS			= -Wall -Wextra -Werror
-SFLAGS    = -fsanitize=address
+SFLAGS    = -g3 -fsanitize=address
 
 INC_LINK 		= -I./libft -I./srcs
 

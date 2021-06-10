@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 04:24:17 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 05:44:40 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/10 22:00:06 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ int max_index(t_node *node, int total)
 void select_pivot(t_sort *sort, t_stack *stack)
 {
 	int min;
-	int med;
+	int mid;
 	int max;
 
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
-	med = (min + max) / 2;
-	sort->b_pivot = (med + max) / 2;
-	sort->s_pivot = (min + med) / 2;
+	mid = (min + max) / 2;
+	sort->b_pivot = (mid + max) / 2;
+	sort->s_pivot = (min + mid) / 2;
 }
 
 void sort_reverse(t_stack *a, t_stack *b, t_sort *sort, int flag)

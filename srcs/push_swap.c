@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 06:01:25 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/10 21:20:11 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ int main(int argc, char *argv[])
 	// printf("main argc = %d\n", argc);
 	cnt = 0;
 	if (argc == 1)
-		ps_error(BASIC);
+		return (0);
 	a = init_stack();
 	b = init_stack();
 	set_stack(argc, argv, a);
 	find_index(a->head, a);
-	just_check(a, b);
+	// just_check(a, b);
 	// two_index_a(a);
 	// three_index_a(a, 3);
 	// four_index(a, b, 4);
-	five_index_a(a, b, 5);
-	// atob(a->total, a, b, cnt);
+	// five_index_a(a, b, 5);
+	atob(a->total, a, b);
 	just_check(a, b);
 }

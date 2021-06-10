@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ps_under_five.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 02:54:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 06:01:04 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/10 21:37:38 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
+
+int min_mid_max(t_stack *stack, int total, int flag)
+{
+	int min;
+	int max;
+
+	if (flag == MIN)
+		return (min_index(stack->head, total));
+	else if (flag == MAX)
+		return (max_index(stack->head, total));
+	else if (flag == MID)
+	{
+		min = min_index(stack->head, total);
+		max = max_index(stack->head, total);
+		return ((min + max) / 2);
+	}
+	return (0);
+}
 
 void two_index_a(t_stack *a)
 {
@@ -43,24 +61,6 @@ void three_notsame(t_stack *a, int max, int min)
 		swap_stack(a, A);
 		reverse_rotate_stack(a, A);
 	}
-}
-
-int min_mid_max(t_stack *stack, int total, int flag)
-{
-	int min;
-	int max;
-
-	if (flag == MIN)
-		return (min_index(stack->head, total));
-	else if (flag == MAX)
-		return (max_index(stack->head, total));
-	else if (flag == MID)
-	{
-		min = min_index(stack->head, total);
-		max = max_index(stack->head, total);
-		return ((min + max) / 2);
-	}
-	return (-1);
 }
 
 void three_index_a(t_stack *a, int total)
@@ -163,3 +163,16 @@ void five_index_a(t_stack *a, t_stack *b, int real_total)
 	push_stack(b, a, A);
 	push_stack(b, a, A);
 }
+
+void	under_five_a(t_stack *a, t_stack *b, int total)
+{
+	if (total == 2)
+		two_index_a(a);
+	else if (total <= 3)
+		three_index_a(a, total);
+	else if (total == 4)
+		four_index(a, b, total);
+	else if (total == 5)
+		five_index_a(a, b, total);
+}
+
