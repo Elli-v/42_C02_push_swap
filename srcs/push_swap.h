@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 21:37:40 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/12 19:09:13 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,17 @@ typedef struct s_sort
 
 void just_check(t_stack *a, t_stack *b);
 
-
 /*
 ** ps_under_five.c
 */
-int		min_mid_max(t_stack *stack, int total, int flag);
-void	two_index_a(t_stack *a);
-void	three_same(t_stack *a, int max, int min);
-void	three_notsame(t_stack *a, int max, int min);
-void	three_index_a(t_stack *a, int total);
-void	four_index(t_stack *a, t_stack *b, int real_total);
-void	five_index_a(t_stack *a, t_stack *b, int real_total);
-void	under_five_a(t_stack *a, t_stack *b, int total);
+int min_mid_max(t_stack *stack, int total, int flag);
+void two_index_a(t_stack *a);
+void three_same(t_stack *a, int max, int min);
+void three_notsame(t_stack *a, int max, int min);
+void three_index_a(t_stack *a, int total);
+void four_index(t_stack *a, t_stack *b, int real_total);
+void five_index_a(t_stack *a, t_stack *b, int real_total);
+void under_five_a(t_stack *a, t_stack *b, int total);
 
 /*
 ** ps_init.c
@@ -129,7 +128,7 @@ void atob(int total, t_stack *a, t_stack *b);
 /*
 ** ps_btoa.c
 */
-void	btoa(int total, t_stack *a, t_stack *b);
+void btoa(int total, t_stack *a, t_stack *b);
 
 int min_index(t_node *node, int total);
 int max_index(t_node *node, int total);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 21:20:11 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/12 19:09:11 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int main(int argc, char *argv[])
 	// three_index_a(a, 3);
 	// four_index(a, b, 4);
 	// five_index_a(a, b, 5);
+	// just_check(a, b);
 	atob(a->total, a, b);
+	// just_check(a, b);
+	// btoa(b->total, a, b);
 	just_check(a, b);
 }
