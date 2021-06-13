@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 04:24:17 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 22:00:06 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/13 22:14:26 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ int max_index(t_node *node, int total)
 void select_pivot(t_sort *sort, t_stack *stack)
 {
 	int min;
-	int mid;
+	// int mid;
 	int max;
 
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
-	mid = (min + max) / 2;
-	sort->b_pivot = (mid + max) / 2;
-	sort->s_pivot = (min + mid) / 2;
+	// mid = (min + max) / 2;
+	sort->b_pivot = (min + max) / 2;
+	sort->s_pivot = (min + sort->b_pivot) / 2;
 }
 
 void sort_reverse(t_stack *a, t_stack *b, t_sort *sort, int flag)

@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 02:54:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/10 21:37:38 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/13 21:50:54 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void three_index_a(t_stack *a, int total)
 	int min;
 	int max;
 
-	min = min_mid_max(a, total, MIN);
-	max = min_mid_max(a, total, MAX);
+	min = min_index(a->head, a->total);
+	max = max_index(a->head, a->total);
 	if (a->total == total)
 		three_same(a, max, min);
 	else
@@ -87,7 +87,7 @@ void four_index(t_stack *a, t_stack *b, int real_total)
 
 	ra = 0;
 	total = real_total;
-	min = min_mid_max(a, total, MIN);
+	min = min_index(a->head, a->total);
 	if (a->total == 4)
 	{
 		while (total--)

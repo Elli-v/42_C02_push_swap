@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/13 17:15:20 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/13 21:05:08 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_sort
 	int iamBstack;
 } t_sort;
 
-// void just_check(t_stack *a, t_stack *b);
+void just_check(t_stack *a, t_stack *b);
 
 /*
 ** ps_under_five.c
