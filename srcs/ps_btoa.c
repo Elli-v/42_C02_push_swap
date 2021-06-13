@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:37:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/12 19:10:26 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/13 17:15:14 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,17 @@ void btoa(int total, t_stack *a, t_stack *b)
 	t_node *node;
 
 	// printf("btoa !\n");
-	if (total == 1)
+	if (total <= 1)
 	{
-		push_stack(b, a, A);
-		return;
+		// printf("\ntotal = %d\n", total);
+		// printf("\nlast pang!!\n\n");
+		if (total == 1)
+		{
+			push_stack(b, a, A);
+			return;
+		}
+		else
+			return;
 	}
 	else
 	{
@@ -137,7 +144,8 @@ void btoa(int total, t_stack *a, t_stack *b)
 		}
 		// printf("head->index = %d\n", b->head->index);
 		push_stack(b, a, A);
-		just_check(a, b);
-		btoa(b->total, a, b);
+		// just_check(a, b);
+		if (b->total != 0)
+			btoa(b->total, a, b);
 	}
 }

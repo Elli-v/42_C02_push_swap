@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/12 19:08:55 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/13 17:15:02 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void atob(int total, t_stack *a, t_stack *b)
 	// 	reverse_rotate_stack(b, B);
 	// }
 	atob(a->total, a, b);
-	just_check(a, b);
-	if (b->total != 1)
+	// just_check(a, b);
+	if (b->total != 0)
 		btoa(b->total, a, b);
-	just_check(a, b);
+	// just_check(a, b);
 }
