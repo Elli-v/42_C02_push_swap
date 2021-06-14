@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/13 21:05:08 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/15 03:20:26 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_sort
 {
 	int s_pivot;
 	int b_pivot;
+	int hiden_pivot;
 	int cnt_ra;
 	int cnt_rb;
 	int cnt_pa;
@@ -61,7 +62,7 @@ typedef struct s_sort
 	int iamBstack;
 } t_sort;
 
-void just_check(t_stack *a, t_stack *b);
+// void just_check(t_stack *a, t_stack *b);
 
 /*
 ** ps_under_five.c
@@ -132,6 +133,8 @@ void btoa(int total, t_stack *a, t_stack *b);
 
 int min_index(t_node *node, int total);
 int max_index(t_node *node, int total);
+void select_pivot_b(t_sort *sort, t_stack *stack);
+void select_pivot_500(t_sort *sort, t_stack *stack);
 void select_pivot(t_sort *sort, t_stack *stack);
 void sort_reverse(t_stack *a, t_stack *b, t_sort *sort, int flag);
 void sort_push_b(t_stack *a, t_stack *b, t_sort *sort);

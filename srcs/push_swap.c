@@ -3,41 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/13 21:16:00 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/15 01:11:07 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void just_check(t_stack *a, t_stack *b)
-{
-	int i;
-	t_node *node;
-
-	i = 0;
-	node = a->head;
-	printf("\n[ A ]\n");
-	while (i++ < a->total)
-	{
-		printf("%d(%d), ", node->data, node->index);
-		if (node->next)
-			node = node->next;
-	}
-	printf("\n");
-	i = 0;
-	node = b->head;
-	printf("\n[ B ]\n");
-	while (i++ < b->total)
-	{
-		printf("%d(%d),", node->data, node->index);
-		if (node->next)
-			node = node->next;
-	}
-	printf("\n-------------------\n");
-}
+// void just_check(t_stack *a, t_stack *b)
+// {
+// 	int i;
+// 	t_node *node;
+//
+// 	i = 0;
+// 	node = a->head;
+// 	printf("\n[ A ]\n");
+// 	while (i++ < a->total)
+// 	{
+// 		printf("%d(%d), ", node->data, node->index);
+// 		if (node->next)
+// 			node = node->next;
+// 	}
+// 	printf("\n");
+// 	i = 0;
+// 	node = b->head;
+// 	printf("\n[ B ]\n");
+// 	while (i++ < b->total)
+// 	{
+// 		printf("%d(%d),", node->data, node->index);
+// 		if (node->next)
+// 			node = node->next;
+// 	}
+// 	printf("\n-------------------\n");
+// }
 
 int main(int argc, char *argv[])
 {
@@ -55,8 +55,10 @@ int main(int argc, char *argv[])
 	b = init_stack();
 	set_stack(argc, argv, a);
 	find_index(a->head, a);
-	atob(a->total, a, b);
 	// just_check(a, b);
+	atob(a->total, a, b);
+	// atob(a->total, a, b);
+	// atob(a->total, a, b);
 	// if (b->total != 0)
 	// 	btoa(b->total, a, b);
 	// just_check(a, b);

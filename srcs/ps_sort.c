@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 04:24:17 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/13 22:14:26 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/15 03:21:39 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,33 @@ int max_index(t_node *node, int total)
 	while (node->prev)
 		node = node->prev;
 	return (max);
+}
+
+void select_pivot_b(t_sort *sort, t_stack *stack)
+{
+	int min;
+	// int mid;
+	int max;
+
+	min = min_index(stack->head, stack->total);
+	max = max_index(stack->head, stack->total);
+	// mid = (min + max) / 2;
+	sort->s_pivot = (min + max) / 3;
+	sort->b_pivot = sort->s_pivot * 2;
+	sort->hiden_pivot = ((sort->b_pivot) + max) / 2;
+}
+
+void select_pivot_500(t_sort *sort, t_stack *stack)
+{
+	int min;
+	// int mid;
+	int max;
+
+	min = min_index(stack->head, stack->total);
+	max = max_index(stack->head, stack->total);
+	// mid = (min + max) / 2;
+	sort->b_pivot = (min + max) / 3;
+	sort->s_pivot = (min + sort->b_pivot) / 2;
 }
 
 void select_pivot(t_sort *sort, t_stack *stack)
