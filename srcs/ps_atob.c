@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/15 17:57:18 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 03:29:00 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,10 @@ void atob(int total, t_stack *a, t_stack *b)
 	int temp;
 
 	// printf("atob !\n");
-	// if (100 < total && total < 200)
-	// {
-	// 	temp = (sort.cnt_pb - sort.cnt_rb);
-		
-	// }
+	if (100 < total && total < 200)
+	{
+		temp = (sort.cnt_pb - sort.cnt_rb);
+	}
 	// 	printf("pb = %d\n", sort.cnt_pb);
 	init_sort(&sort);
 	temp = total;
@@ -93,6 +92,9 @@ void atob(int total, t_stack *a, t_stack *b)
 	}
 	if (b->total > 100 && b->total < 200)
 		test(b->total, a, b);
+	// just_check(a, b);
 	atob(a->total, a, b);
-	btoa(b->total, a, b);
+	// just_check(a, b);
+	if (b->total != 0)
+		btoa(b->total, a, b);
 }

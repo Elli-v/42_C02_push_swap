@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_btoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:37:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/15 20:17:35 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 03:28:01 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,17 +92,16 @@
 
 void btoa(int total, t_stack *a, t_stack *b)
 {
+	t_node *node;
 	int max;
+	int post_max;
 	int mid_node;
 	int cnt;
 	int temp;
-	t_node *node;
 
 	// printf("btoa !\n");
 	if (total <= 1)
 	{
-		// printf("\ntotal = %d\n", total);
-		// printf("\nlast pang!!\n\n");
 		if (total == 1)
 		{
 			push_stack(b, a, A);
@@ -114,6 +113,7 @@ void btoa(int total, t_stack *a, t_stack *b)
 	else
 	{
 		max = (a->head->index) - 1;
+		post_max = max - 1;
 		mid_node = total / 2;
 		cnt = 0;
 		temp = total;
@@ -135,17 +135,31 @@ void btoa(int total, t_stack *a, t_stack *b)
 		{
 			cnt = total - cnt;
 			while (cnt--)
+			{
 				reverse_rotate_stack(b, B);
+				if (b->head->index == post_max)
+				{
+					push_stack(b, a, A);
+				}
+			}
 		}
 		else
 		{
 			while (cnt--)
+			{
 				rotate_stack(b, B);
+				if (b->head->index == post_max)
+				{
+					cnt--;
+					push_stack(b, a, A);
+				}
+			}
 		}
-		// printf("head->index = %d\n", b->head->index);
-		push_stack(b, a, A);
-		// just_check(a, b);
-		if (b->total != 0)
-			btoa(b->total, a, b);
 	}
+	push_stack(b, a, A);
+	if (a->head->index > a->head->next->index)
+		swap_stack(a, A);
+	// just_check(a, b);
+	if (b->total != 0)
+		btoa(b->total, a, b);
 }
