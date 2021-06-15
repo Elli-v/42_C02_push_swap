@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:37:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/13 21:15:51 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/15 20:17:35 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@
 
 void btoa(int total, t_stack *a, t_stack *b)
 {
-	int large_index;
+	int max;
 	int mid_node;
 	int cnt;
 	int temp;
@@ -113,19 +113,19 @@ void btoa(int total, t_stack *a, t_stack *b)
 	}
 	else
 	{
-		large_index = (a->head->index) - 1;
+		max = (a->head->index) - 1;
 		mid_node = total / 2;
 		cnt = 0;
 		temp = total;
 		node = b->head;
 		while (temp--)
 		{
-			if (large_index != node->index)
+			if (max != node->index)
 			{
 				node = node->next;
 				cnt++;
 			}
-			else if (large_index == node->index)
+			else if (max == node->index)
 				break;
 		}
 		while (node->prev)

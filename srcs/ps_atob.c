@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/15 03:30:56 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/15 17:57:18 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,14 @@ void atob(int total, t_stack *a, t_stack *b)
 	int temp;
 
 	// printf("atob !\n");
-	temp = total;
+	// if (100 < total && total < 200)
+	// {
+	// 	temp = (sort.cnt_pb - sort.cnt_rb);
+		
+	// }
+	// 	printf("pb = %d\n", sort.cnt_pb);
 	init_sort(&sort);
+	temp = total;
 	if (temp < 6)
 	{
 		under_five_a(a, b, temp);

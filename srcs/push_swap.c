@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/15 01:11:07 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/15 17:48:01 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,12 @@ int main(int argc, char *argv[])
 	find_index(a->head, a);
 	// just_check(a, b);
 	atob(a->total, a, b);
+	// while (1)
+	// 	;
 	// atob(a->total, a, b);
 	// atob(a->total, a, b);
+	// atob(a->total, a, b);
+	// printf("total = %d\n", a->total);
 	// if (b->total != 0)
 	// 	btoa(b->total, a, b);
 	// just_check(a, b);
