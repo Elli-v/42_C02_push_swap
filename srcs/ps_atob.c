@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 20:10:27 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 20:43:35 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,12 @@ void			re_btoa(int total, t_stack *a, t_stack *b)
 void			ps_atob_div(t_stack *a, t_stack *b, t_sort *sort)
 {
 	if (a->head->index > sort->b_pivot)
-	{
 		rotate_stack(a, A);
-		sort->cnt_ra++;
-	}
 	else
 	{
 		push_stack(a, b, B);
-		sort->cnt_pb++;
 		if (b->head->index > sort->s_pivot)
-		{
 			rotate_stack(b, B);
-			sort->cnt_rb++;
-		}
 	}
 }
 

@@ -6,15 +6,15 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 00:43:38 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 16:55:18 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 20:36:12 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int					max(t_node *node, int total)
+int				max(t_node *node, int total)
 {
-	int				max;
+	int			max;
 
 	max = node->data;
 	while (total--)
@@ -31,9 +31,9 @@ int					max(t_node *node, int total)
 	return (max);
 }
 
-void				give_index(t_node *node, t_stack *stack, int index, int min)
+void			give_index(t_node *node, t_stack *stack, int index, int min)
 {
-	int				i;
+	int			i;
 
 	i = 0;
 	while (i++ < stack->total)
@@ -45,12 +45,12 @@ void				give_index(t_node *node, t_stack *stack, int index, int min)
 	}
 }
 
-void				find_index(t_node *node, t_stack *stack)
+void			find_index(t_node *node, t_stack *stack)
 {
-	int				index;
-	int				i;
-	int				min;
-	int				x_min;
+	int			index;
+	int			i;
+	int			min;
+	int			x_min;
 
 	index = 0;
 	while (index++ < stack->total)

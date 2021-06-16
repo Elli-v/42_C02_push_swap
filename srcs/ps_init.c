@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 19:12:40 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 17:57:49 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 20:44:17 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ t_stack			*init_stack(void)
 	stack->head = NULL;
 	stack->tail = NULL;
 	stack->total = 0;
+	stack->max = 0;
+	stack->post_max = 0;
 	return (stack);
 }
 
@@ -42,7 +44,5 @@ t_node			*init_node(void)
 void			init_sort(t_sort *sort)
 {
 	sort->cnt_ra = 0;
-	sort->cnt_rb = 0;
 	sort->cnt_pa = 0;
-	sort->cnt_pb = 0;
 }
