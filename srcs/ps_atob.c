@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 03:29:00 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 16:54:08 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void test(int total, t_stack *a, t_stack *b)
+void re_btoa(int total, t_stack *a, t_stack *b)
 {
 	t_sort sort;
 	int temp;
@@ -20,13 +20,10 @@ void test(int total, t_stack *a, t_stack *b)
 	temp = total;
 	init_sort(&sort);
 	select_pivot_b(&sort, b);
-	// printf("s = %d >><< b = %d\n", sort.s_pivot, sort.b_pivot);
 	while (temp--)
 	{
 		if (b->head->index >= sort.s_pivot && b->head->index < sort.b_pivot)
-		{
 			rotate_stack(b, B);
-		}
 		else
 		{
 			push_stack(b, a, A);
@@ -53,13 +50,7 @@ void atob(int total, t_stack *a, t_stack *b)
 {
 	t_sort sort;
 	int temp;
-
-	// printf("atob !\n");
-	if (100 < total && total < 200)
-	{
-		temp = (sort.cnt_pb - sort.cnt_rb);
-	}
-	// 	printf("pb = %d\n", sort.cnt_pb);
+	
 	init_sort(&sort);
 	temp = total;
 	if (temp < 6)
@@ -67,11 +58,7 @@ void atob(int total, t_stack *a, t_stack *b)
 		under_five_a(a, b, temp);
 		return;
 	}
-	if (total < 300)
-		select_pivot(&sort, a);
-	else
-		select_pivot_500(&sort, a);
-	// printf("////s = %d >><< b = %d\n", sort.s_pivot, sort.b_pivot);
+	select_pivot(&sort, a);
 	while (temp--)
 	{
 		if (a->head->index > sort.b_pivot)
@@ -91,10 +78,8 @@ void atob(int total, t_stack *a, t_stack *b)
 		}
 	}
 	if (b->total > 100 && b->total < 200)
-		test(b->total, a, b);
-	// just_check(a, b);
+		re_btoa(b->total, a, b);
 	atob(a->total, a, b);
-	// just_check(a, b);
 	if (b->total != 0)
 		btoa(b->total, a, b);
 }

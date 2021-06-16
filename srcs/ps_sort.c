@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 04:24:17 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/15 17:57:47 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 16:55:51 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,10 @@ int max_index(t_node *node, int total)
 void select_pivot_b(t_sort *sort, t_stack *stack)
 {
 	int min;
-	// int mid;
 	int max;
 
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
-	// mid = (min + max) / 2;
 	sort->s_pivot = (min + max) / 3;
 	sort->b_pivot = sort->s_pivot * 2;
 	sort->hiden_pivot = ((sort->b_pivot) + max) / 2;
@@ -67,12 +65,10 @@ void select_pivot_b(t_sort *sort, t_stack *stack)
 void select_pivot_500(t_sort *sort, t_stack *stack)
 {
 	int min;
-	// int mid;
 	int max;
-
+	
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
-	// mid = (min + max) / 2;
 	sort->b_pivot = (min + max) / 3;
 	sort->s_pivot = (min + sort->b_pivot) / 2;
 }
@@ -80,13 +76,18 @@ void select_pivot_500(t_sort *sort, t_stack *stack)
 void select_pivot(t_sort *sort, t_stack *stack)
 {
 	int min;
-	// int mid;
 	int max;
+	int temp;
 
+	temp = 0;
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
-	// mid = (min + max) / 2;
 	sort->b_pivot = (min + max) / 2;
+	if ((sort->b_pivot - min) > 70)
+	{
+		temp = (sort->b_pivot - min) / 2;
+		sort->b_pivot = min + temp;
+	}
 	sort->s_pivot = (min + sort->b_pivot) / 2;
 }
 

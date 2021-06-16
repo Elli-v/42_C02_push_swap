@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_linked.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 14:15:42 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/05 19:58:51 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 16:55:11 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int					make_node(char *argv, t_node **node, t_stack *a)
 	if (!temp)
 		return (0);
 	temp->data = ps_atoi(argv);
-	// printf("argc = %d\n", temp->data);
 	connect_node(temp, node, a);
 	a->total++;
 	return (1);
@@ -87,13 +86,5 @@ void				set_stack(int argc, char **argv, t_stack *a)
 		a->tail = node;
 	while(node->prev)
 		node = node->prev;
-	duplicate_data((t_node *)a->head);
-	// printf("head->data = %d\n", ((t_node *)a->head)->data);
-	// printf("head->next->data = %d\n", ((t_node *)a->head)->next->data);
-	// printf("head->next->next->data = %d\n", ((t_node *)a->head)->next->next->data);
-	// printf("\n\n\n\n");
-	// printf("tail->data = %d\n", ((t_node *)a->tail)->data);
-	// printf("tail->prev->data = %d\n", ((t_node *)a->tail)->prev->data);
-	// printf("tail->prev->prev->data = %d\n", ((t_node *)a->tail)->prev->prev->data);
-	
+	duplicate_data((t_node *)a->head);	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_prev_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 00:43:38 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/05 19:53:15 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 16:55:18 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,4 @@ void				find_index(t_node *node, t_stack *stack)
 		node = stack->head;
 		x_min = min;
 	}
-
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 03:20:25 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 16:58:14 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,8 @@ int main(int argc, char *argv[])
 {
 	t_stack *a;
 	t_stack *b;
-
 	int cnt;
 
-	// 메모리 누수 검사는 했나요? >> 다 만들고 할게요옹~
-	// printf("main argc = %d\n", argc);
 	cnt = 0;
 	if (argc == 1)
 		return (0);
@@ -55,14 +52,5 @@ int main(int argc, char *argv[])
 	b = init_stack();
 	set_stack(argc, argv, a);
 	find_index(a->head, a);
-	// just_check(a, b);
 	atob(a->total, a, b);
-	// while (1)
-	// 	;
-	// atob(a->total, a, b);
-	// atob(a->total, a, b);
-	// atob(a->total, a, b);
-	// printf("total = %d\n", a->total);
-	// btoa(b->total, a, b);
-	// just_check(a, b);
 }
