@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 16:58:56 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 20:14:00 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 #define A 1
 #define B 2
 #define ALL 3
+
+#define MIN 11
+#define MID 12
+#define MAX 13
 
 #define BASIC 100
 #define INT_RANGE 101
@@ -44,6 +48,8 @@ typedef struct s_stack
 	t_node *head;
 	t_node *tail;
 	int total;
+	int	max;
+	int	post_max;
 } t_stack;
 
 typedef struct s_sort
@@ -64,13 +70,13 @@ typedef struct s_sort
 ** ps_under_five.c
 */
 int min_mid_max(t_stack *stack, int total, int flag);
-void two_index_a(t_stack *a);
+void two_index(t_stack *a);
 void three_same(t_stack *a, int max, int min);
 void three_notsame(t_stack *a, int max, int min);
-void three_index_a(t_stack *a, int total);
+void three_index(t_stack *a, int total);
 void four_index(t_stack *a, t_stack *b, int real_total);
-void five_index_a(t_stack *a, t_stack *b, int real_total);
-void under_five_a(t_stack *a, t_stack *b, int total);
+void five_index(t_stack *a, t_stack *b, int real_total);
+void under_five(t_stack *a, t_stack *b, int total);
 
 /*
 ** ps_init.c
@@ -83,6 +89,7 @@ void init_sort(t_sort *sort);
 ** ps_utils.c
 */
 void ps_putendl_fd(char *s, int fd);
+int				find_mid(t_stack *stack, int total);
 void ps_error(int flag);
 int ps_atoi(const char *str);
 

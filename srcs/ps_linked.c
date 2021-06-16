@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 14:15:42 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 16:55:11 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 17:58:50 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void				connect_node(t_node *temp, t_node **node, t_stack *a)
 int					make_node(char *argv, t_node **node, t_stack *a)
 {
 	t_node			*temp;
-
 
 	temp = init_node();
 	if (!temp)
@@ -61,7 +60,6 @@ void				duplicate_data(t_node *node)
 		}
 		node = node->next;
 	}
-	
 }
 
 void				set_stack(int argc, char **argv, t_stack *a)
@@ -84,7 +82,7 @@ void				set_stack(int argc, char **argv, t_stack *a)
 		temp = temp->next;
 	if (node->next == NULL)
 		a->tail = node;
-	while(node->prev)
+	while (node->prev)
 		node = node->prev;
-	duplicate_data((t_node *)a->head);	
+	duplicate_data((t_node *)a->head);
 }

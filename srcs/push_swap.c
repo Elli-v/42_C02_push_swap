@@ -6,44 +6,17 @@
 /*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:02 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 16:58:14 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/16 20:31:20 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-// void just_check(t_stack *a, t_stack *b)
-// {
-// 	int i;
-// 	t_node *node;
-//
-// 	i = 0;
-// 	node = a->head;
-// 	printf("\n[ A ]\n");
-// 	while (i++ < a->total)
-// 	{
-// 		printf("%d(%d), ", node->data, node->index);
-// 		if (node->next)
-// 			node = node->next;
-// 	}
-// 	printf("\n");
-// 	i = 0;
-// 	node = b->head;
-// 	printf("\n[ B ]\n");
-// 	while (i++ < b->total)
-// 	{
-// 		printf("%d(%d),", node->data, node->index);
-// 		if (node->next)
-// 			node = node->next;
-// 	}
-// 	printf("\n-------------------\n");
-// }
-
-int main(int argc, char *argv[])
+int			main(int argc, char *argv[])
 {
-	t_stack *a;
+	t_stack	*a;
 	t_stack *b;
-	int cnt;
+	int		cnt;
 
 	cnt = 0;
 	if (argc == 1)
