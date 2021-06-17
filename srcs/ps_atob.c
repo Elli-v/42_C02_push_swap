@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/17 01:03:42 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/18 03:31:35 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void				atob(int total, t_stack *a, t_stack *b)
 	temp = total;
 	if (temp < 6)
 	{
-		under_five(a, b, temp);
+		if (temp > 1)
+			under_five(a, b, temp);
 		return ;
 	}
 	select_pivot(&sort, a);

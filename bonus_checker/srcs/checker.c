@@ -6,7 +6,7 @@
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 02:47:33 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/18 02:56:45 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/18 03:14:38 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ int					main(int argc, char *argv[])
 	t_stack			*a;
 	t_stack			*b;
 
-	if (argc == 2)
-		ps_error(BASIC);
 	if (argc > 1)
 	{
 		a = init_stack();
