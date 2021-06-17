@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:10:51 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 20:56:10 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/18 02:33:54 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include <stdio.h> // 나중에 꼭 지우셈 꼭..
 # include <stdlib.h>
 # include <unistd.h>
 
 # define INT_MAX 2147483647
+# define INT_MIN -2147483648
 # define A 1
 # define B 2
 # define ALL 3
@@ -54,6 +54,13 @@ typedef struct		s_sort
 	int				cnt_ra;
 	int				cnt_pa;
 }					t_sort;
+
+/*
+** ps_free.c
+*/
+void				ps_free_a(t_stack *a);
+void				ps_free_b(t_stack *b);
+void				ps_free_all(t_stack *a, t_stack *b);
 
 /*
 ** ps_init.c

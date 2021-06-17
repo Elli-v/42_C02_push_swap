@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_atob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:50 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 20:43:35 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/17 01:03:42 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void			re_one_third(t_stack *a, t_stack *b, t_sort *sort)
+void				re_one_third(t_stack *a, t_stack *b, t_sort *sort)
 {
 	if (b->head->index >= sort->s_pivot &&
 	b->head->index < sort->b_pivot)
@@ -29,10 +29,10 @@ void			re_one_third(t_stack *a, t_stack *b, t_sort *sort)
 	}
 }
 
-void			re_btoa(int total, t_stack *a, t_stack *b)
+void				re_btoa(int total, t_stack *a, t_stack *b)
 {
-	t_sort		sort;
-	int			temp;
+	t_sort			sort;
+	int				temp;
 
 	temp = total;
 	init_sort(&sort);
@@ -50,7 +50,7 @@ void			re_btoa(int total, t_stack *a, t_stack *b)
 	}
 }
 
-void			ps_atob_div(t_stack *a, t_stack *b, t_sort *sort)
+void				ps_atob_div(t_stack *a, t_stack *b, t_sort *sort)
 {
 	if (a->head->index > sort->b_pivot)
 		rotate_stack(a, A);
@@ -62,10 +62,10 @@ void			ps_atob_div(t_stack *a, t_stack *b, t_sort *sort)
 	}
 }
 
-void			atob(int total, t_stack *a, t_stack *b)
+void				atob(int total, t_stack *a, t_stack *b)
 {
-	t_sort		sort;
-	int			temp;
+	t_sort			sort;
+	int				temp;
 
 	init_sort(&sort);
 	temp = total;

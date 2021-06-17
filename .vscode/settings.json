@@ -4,6 +4,20 @@
 		"algorithm": "c",
 		"chrono": "c",
 		"limits": "c",
-		"ratio": "c"
+		"ratio": "c",
+		"checker.h": "c",
+		"__bit_reference": "c",
+		"__functional_base": "c",
+		"__node_handle": "c",
+		"bitset": "c",
+		"__memory": "c",
+		"functional": "c",
+		"iterator": "c",
+		"memory": "c",
+		"optional": "c",
+		"system_error": "c",
+		"tuple": "c",
+		"type_traits": "c",
+		"vector": "c"
 	}
 }

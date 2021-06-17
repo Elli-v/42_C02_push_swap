@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_utils.c                                         :+:      :+:    :+:   */
+/*   ck_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 20:41:10 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/17 23:25:11 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/17 23:23:25 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
+
+void				ps_putendl_fd(char *s, int fd)
+{
+	int				i;
+
+	if (s == NULL)
+		return (void)(NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+	write(fd, "\n", 1);
+}
 
 void				push_stack_one(t_stack *from, t_stack *to)
 {
@@ -27,21 +42,6 @@ void				push_stack_one(t_stack *from, t_stack *to)
 	}
 	from->head = NULL;
 	from->tail = NULL;
-}
-
-void				ps_putendl_fd(char *s, int fd)
-{
-	int				i;
-
-	if (s == NULL)
-		return (void)(NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-	write(fd, "\n", 1);
 }
 
 void				ps_error(int flag)

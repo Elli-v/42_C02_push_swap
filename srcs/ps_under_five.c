@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ps_under_five.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 02:54:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 20:20:50 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/17 01:05:08 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int				find_mid(t_stack *stack, int total)
+int					find_mid(t_stack *stack, int total)
 {
-	int			min;
-	int			max;
+	int				min;
+	int				max;
 
 	min = min_index(stack->head, total);
 	max = max_index(stack->head, total);
 	return ((min + max) / 2);
 }
 
-void			three_index(t_stack *a, int total)
+void				three_index(t_stack *a, int total)
 {
-	int			min;
-	int			max;
+	int				min;
+	int				max;
 
 	total = 0;
 	min = min_index(a->head, a->total);
@@ -40,11 +40,11 @@ void			three_index(t_stack *a, int total)
 		reverse_rotate_stack(a, A);
 }
 
-void			four_index(t_stack *a, t_stack *b, int real_total)
+void				four_index(t_stack *a, t_stack *b, int real_total)
 {
-	int			min;
-	int			total;
-	int			ra;
+	int				min;
+	int				total;
+	int				ra;
 
 	ra = 0;
 	total = real_total;
@@ -59,12 +59,12 @@ void			four_index(t_stack *a, t_stack *b, int real_total)
 	push_stack(b, a, A);
 }
 
-void			five_index(t_stack *a, t_stack *b, int real_total)
+void				five_index(t_stack *a, t_stack *b, int real_total)
 {
-	int			total;
-	int			mid;
-	int			ra;
-	int			pb;
+	int				total;
+	int				mid;
+	int				ra;
+	int				pb;
 
 	ra = 0;
 	pb = 0;
@@ -84,7 +84,7 @@ void			five_index(t_stack *a, t_stack *b, int real_total)
 	push_stack(b, a, A);
 }
 
-void			under_five(t_stack *a, t_stack *b, int total)
+void				under_five(t_stack *a, t_stack *b, int total)
 {
 	if (total == 2)
 	{

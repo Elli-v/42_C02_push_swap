@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ps_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 04:24:17 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 19:54:59 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/17 01:04:53 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int				min_index(t_node *node, int total)
+int					min_index(t_node *node, int total)
 {
-	int		min;
+	int				min;
 
 	min = node->index;
 	while (total--)
@@ -31,9 +31,9 @@ int				min_index(t_node *node, int total)
 	return (min);
 }
 
-int				max_index(t_node *node, int total)
+int					max_index(t_node *node, int total)
 {
-	int		max;
+	int				max;
 
 	max = node->index;
 	while (total--)
@@ -50,10 +50,10 @@ int				max_index(t_node *node, int total)
 	return (max);
 }
 
-void			select_pivot_b(t_sort *sort, t_stack *stack)
+void				select_pivot_b(t_sort *sort, t_stack *stack)
 {
-	int			min;
-	int			max;
+	int				min;
+	int				max;
 
 	min = min_index(stack->head, stack->total);
 	max = max_index(stack->head, stack->total);
@@ -62,11 +62,11 @@ void			select_pivot_b(t_sort *sort, t_stack *stack)
 	sort->hiden_pivot = ((sort->b_pivot) + max) / 2;
 }
 
-void			select_pivot(t_sort *sort, t_stack *stack)
+void				select_pivot(t_sort *sort, t_stack *stack)
 {
-	int			min;
-	int			max;
-	int			temp;
+	int				min;
+	int				max;
+	int				temp;
 
 	temp = 0;
 	min = min_index(stack->head, stack->total);

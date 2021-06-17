@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_btoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soooh <soooh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:37:18 by soooh             #+#    #+#             */
-/*   Updated: 2021/06/16 17:56:32 by soooh            ###   ########.fr       */
+/*   Updated: 2021/06/17 01:03:53 by soooh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void			ps_push_max_down(t_stack *a, t_stack *b, int cnt)
+void				ps_push_max_down(t_stack *a, t_stack *b, int cnt)
 {
 	while (cnt--)
 	{
@@ -25,7 +25,7 @@ void			ps_push_max_down(t_stack *a, t_stack *b, int cnt)
 	}
 }
 
-void			ps_push_max_up(t_stack *a, t_stack *b, int cnt)
+void				ps_push_max_up(t_stack *a, t_stack *b, int cnt)
 {
 	while (cnt--)
 	{
@@ -35,10 +35,10 @@ void			ps_push_max_up(t_stack *a, t_stack *b, int cnt)
 	}
 }
 
-void			ps_push_max(t_stack *a, t_stack *b, int cnt)
+void				ps_push_max(t_stack *a, t_stack *b, int cnt)
 {
-	int			total;
-	int			mid_num;
+	int				total;
+	int				mid_num;
 
 	total = b->total;
 	mid_num = total / 2;
@@ -51,11 +51,11 @@ void			ps_push_max(t_stack *a, t_stack *b, int cnt)
 		ps_push_max_down(a, b, cnt);
 }
 
-int				ps_search_max(t_stack *b)
+int					ps_search_max(t_stack *b)
 {
-	t_node		*node;
-	int			temp;
-	int			cnt;
+	t_node			*node;
+	int				temp;
+	int				cnt;
 
 	temp = b->total;
 	node = b->head;
@@ -75,10 +75,10 @@ int				ps_search_max(t_stack *b)
 	return (cnt);
 }
 
-void			btoa(int total, t_stack *a, t_stack *b)
+void				btoa(int total, t_stack *a, t_stack *b)
 {
-	int			mid_node;
-	int			cnt;
+	int				mid_node;
+	int				cnt;
 
 	if (total == 1)
 	{
