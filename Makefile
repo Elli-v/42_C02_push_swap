@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: soooh <soooh@student.42seoul.kr>           +#+  +:+       +#+         #
+#    By: soooh <soooh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/25 15:24:05 by soooh             #+#    #+#              #
-#    Updated: 2021/06/17 21:47:29 by soooh            ###   ########.fr        #
+#    Updated: 2021/06/18 16:41:42 by soooh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS			= ./srcs/push_swap.c\
 					./srcs/ps_prev_stack.c
 
 CFLAGS			= -Wall -Wextra -Werror
-SFLAGS    = -g3 -fsanitize=address
+#SFLAGS  #  = -g3 -fsanitize=address
 
 INC_LINK 		= -I./libft -I./srcs
 
@@ -46,7 +46,7 @@ bonus : 		re
 
 $(NAME):		$(OBJS) libft
 	@cp $(LIBFT_LIB)/$(LIBFT) $(LIBFT)
-	@$(CC) -o $(NAME) $(CFLAGS) $(SFLAGS) $(INC_LINK) $(OBJS) $(LIBFT)
+	@$(CC) -o $(NAME) $(CFLAGS) $(INC_LINK) $(OBJS) $(LIBFT)
 	@$(RM) $(LIBFT)
 	
 #libft compile
